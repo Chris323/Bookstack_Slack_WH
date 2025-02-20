@@ -8,6 +8,7 @@ def lambda_handler(event, context):
     whurl = os.environ['TESTING'] #for testing channel output
     #whurl = os.environ['SLACK_WEBHOOK']
     message = {"text": f"{event}"} #uncomment to output entire event to slack, may bog down speeds
+
     send_webhook(whurl, message)
 
     #AKA reverse api
@@ -34,6 +35,10 @@ def send_webhook(webhook_url, payload):
     except Exception as e:
         # Log the error if the request fails
         return {"statusCode": 500, "body": f"Error: {str(e)}"}
+
+#TODO, needs to change based on event type
+def message_handler(event_name):
+    pass
 
 def logging_handler(event):
     logger = logging.getLogger()
