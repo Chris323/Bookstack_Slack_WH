@@ -1,0 +1,43 @@
+{
+    "event":"page_delete",
+    "text":"Chris topher deleted page \"testing\"",
+    "triggered_at":"2025-02-20T03:08:19.000000Z",
+    "triggered_by":{
+       "id":3,
+       "name":"Chris Topher",
+       "slug":"chris-topher"
+    },
+    "triggered_by_profile_url":"https://wiki.com/user/chris-topher",
+    "webhook_id":1,
+    "webhook_name":"Page Updates",
+    "url":"https://wiki.com/books/it-internal/page/testing",
+    "related_item":{
+       "id":40,
+       "book_id":6,
+       "chapter_id":0,
+       "name":"testing",
+       "slug":"testing",
+       "priority":7,
+       "created_at":"2025-02-20T03:05:19.000000Z",
+       "updated_at":"2025-02-20T03:08:19.000000Z",
+       "created_by":{
+          "id":3,
+          "name":"Chris Topher",
+          "slug":"chris-topher"
+       },
+       "updated_by":{
+          "id":3,
+          "name":"Chris Topher",
+          "slug":"chris-topher"
+       },
+       "draft":false,
+       "revision_count":2,
+       "template":false,
+       "owned_by":{
+          "id":3,
+          "name":"Chris Topher",
+          "slug":"chris-topher"
+       },
+       "editor":"wysiwyg"
+    }
+ }

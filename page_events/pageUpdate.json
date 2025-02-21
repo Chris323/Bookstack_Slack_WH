@@ -1,0 +1,56 @@
+{
+    "event":"page_update",
+    "text":"Chris Topher updated page \"testing\"",
+    "triggered_at":"2025-02-20T03:07:19.000000Z",
+    "triggered_by":{
+       "id":3,
+       "name":"Chris Topher",
+       "slug":"chris-topher"
+    },
+    "triggered_by_profile_url":"https://wiki.com/user/chris-topher",
+    "webhook_id":1,
+    "webhook_name":"Page Updates",
+    "url":"https://wiki.com/books/book-of-nice-worksafe-word/page/testing",
+    "related_item":{
+       "id":40,
+       "book_id":9,
+       "chapter_id":0,
+       "name":"testing",
+       "slug":"testing",
+       "priority":7,
+       "created_at":"2025-02-20T03:05:19.000000Z",
+       "updated_at":"2025-02-20T03:07:19.000000Z",
+       "created_by":{
+          "id":3,
+          "name":"Chris Topher",
+          "slug":"chris-topher"
+       },
+       "updated_by":{
+          "id":3,
+          "name":"Chris Topher",
+          "slug":"chris-topher"
+       },
+       "draft":false,
+       "revision_count":2,
+       "template":false,
+       "owned_by":{
+          "id":3,
+          "name":"Chris Topher",
+          "slug":"chris-topher"
+       },
+       "editor":"wysiwyg",
+       "current_revision":{
+          "id":113,
+          "page_id":40,
+          "name":"testing",
+          "created_by":3,
+          "created_at":"2025-02-20T03:07:19.000000Z",
+          "updated_at":"2025-02-20T03:07:19.000000Z",
+          "slug":"testing",
+          "book_slug":"book-of-nice-worksafe-word",
+          "type":"version",
+          "summary":"",
+          "revision_number":2
+       }
+    }
+ }
