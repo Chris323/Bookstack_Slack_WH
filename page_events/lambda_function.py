@@ -38,39 +38,40 @@ def send_webhook(webhook_url, payload):
 
 #TODO, needs to change based on event type
 def message_handler(event_name):
-    action = ''
-    page_name = ''
-    date_occurred = ''
-    user = ''
-    message = {"text": "----------------------------------------------\n"+
-                f"** {action} ** \n"+
-                f"Page Name: \"{page_name}\" \n"+
-                f"Date: \"{date_occurred}\" \n"+
-                f"By: \"{user}\""}
+    #action = ''
+    #page_name = ''
+    #date_occurred = ''
+    #user = ''
 
     if "page_create" == event_name['event']:
         action = 'PAGE CREATED'
         page_name = event_name['related_item']['name']
-        date_occurred = event_name['related_item']['created_at']
+        date_occurred = event_name['related_item']['created_at'].split('T')
         user = event_name['related_item']['created_by']['name']
 
     if "page_update" == event_name['event']:
         action = 'PAGE UPDATED'
         page_name = event_name['related_item']['name']
-        date_occurred = event_name['related_item']['updated_at']
+        date_occurred = event_name['related_item']['updated_at'].split('T')
         user = event_name['related_item']['updated_by']['name']
 
     if "page_delete" == event_name['event']:
         action = 'PAGE DELETED'
         page_name = event_name['related_item']['name']
-        date_occurred = event_name['related_item']['updated_at']
+        date_occurred = event_name['related_item']['updated_at'].split('T')
         user = event_name['related_item']['updated_by']['name']
 
     if "page_move" == event_name['event']:
         action = 'PAGE MOVED'
         page_name = event_name['related_item']['name']
-        date_occurred = event_name['related_item']['updated_at']
+        date_occurred = event_name['related_item']['updated_at'].split('T')
         user = event_name['related_item']['updated_by']['name']
+
+    message = {"text": "----------------------------------------------\n"+
+                f"** {action} ** \n"+
+                f"Page Name: \"{page_name}\" \n"+
+                f"Date: \"{date_occurred}\" \n"+
+                f"By: \"{user}\""}
     
     return message
 
