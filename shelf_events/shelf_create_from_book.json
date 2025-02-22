@@ -1,0 +1,37 @@
+{
+    "event":"bookshelf_create_from_book",
+    "text":"Chris Ortega converted book to shelf \"duh\"",
+    "triggered_at":"2025-02-22T01:43:27.000000Z",
+    "triggered_by":{
+       "id":3,
+       "name":"Chris Ortega",
+       "slug":"chris-ortega"
+    },
+    "triggered_by_profile_url":"https://wiki.hammercreative.com/user/chris-ortega",
+    "webhook_id":2,
+    "webhook_name":"Shelf Events",
+    "url":"https://wiki.hammercreative.com/shelves/duh",
+    "related_item":{
+       "id":13,
+       "name":"duh",
+       "slug":"duh",
+       "description":"",
+       "created_by":{
+          "id":3,
+          "name":"Chris Ortega",
+          "slug":"chris-ortega"
+       },
+       "updated_by":{
+          "id":3,
+          "name":"Chris Ortega",
+          "slug":"chris-ortega"
+       },
+       "created_at":"2025-02-22T01:43:26.000000Z",
+       "updated_at":"2025-02-22T01:43:26.000000Z",
+       "owned_by":{
+          "id":3,
+          "name":"Chris Ortega",
+          "slug":"chris-ortega"
+       }
+    }
+ }
