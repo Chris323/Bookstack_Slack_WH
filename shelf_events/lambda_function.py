@@ -42,29 +42,38 @@ def message_handler(event_name):
     #page_name = ''
     #date_occurred = ''
     #user = ''
+    date_created = event_name['related_item']['created_at'].split('T')
+    date_updated = event_name['related_item']['updated_at'].split('T')
+    date_create_out = date_created[0] + ' ' + date_created[1]
+    date_update_out = date_updated[0] + ' ' + date_updated[1]
+
 
     if "bookshelf_create" == event_name['event']:
         action = 'SHELF CREATED'
         page_name = event_name['related_item']['name']
-        date_occurred = event_name['related_item']['created_at'].split('T')
+        #date_occurred = event_name['related_item']['created_at'].split('T')
+        date_occurred = date_create_out
         user = event_name['related_item']['created_by']['name']
 
     if "bookshelf_update" == event_name['event']:
         action = 'SHELF UPDATED'
         page_name = event_name['related_item']['name']
-        date_occurred = event_name['related_item']['updated_at'].split('T')
+        #date_occurred = event_name['related_item']['updated_at'].split('T')
+        date_occurred = date_update_out
         user = event_name['related_item']['updated_by']['name']
 
     if "bookshelf_delete" == event_name['event']:
         action = '****SHELF DELETED****'
         page_name = event_name['related_item']['name']
-        date_occurred = event_name['related_item']['updated_at'].split('T')
+        #date_occurred = event_name['related_item']['updated_at'].split('T')
+        date_occurred = date_update_out
         user = event_name['related_item']['updated_by']['name']
 
     if "bookshelf_create_from_book" == event_name['event']:
         action = 'SHELF CREATED FROM BOOK'
         page_name = event_name['related_item']['name']
-        date_occurred = event_name['related_item']['updated_at'].split('T')
+        #date_occurred = event_name['related_item']['updated_at'].split('T')
+        date_occurred = date_update_out
         user = event_name['related_item']['updated_by']['name']
 
     message = {"text": "----------------------------------------------\n"+
