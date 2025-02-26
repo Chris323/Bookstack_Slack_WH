@@ -1,21 +1,23 @@
 {
-    "event":"bookshelf_update",
-    "text":"Chris updated shelf \"testing\"",
-    "triggered_at":"2025-02-22T01:49:08.000000Z",
+    "event":"book_delete",
+    "text":"Chris deleted book \"okay\"",
+    "triggered_at":"2025-02-26T22:53:23.000000Z",
     "triggered_by":{
        "id":3,
        "name":"Chris Topher",
-       "slug":"chris-topher"
+       "slug":"chris-Topher"
     },
     "triggered_by_profile_url":"https://wiki.com/user/chris-topher",
-    "webhook_id":2,
-    "webhook_name":"Shelf Events",
-    "url":"https://wiki.com/shelves/testing",
+    "webhook_id":3,
+    "webhook_name":"Book Events",
+    "url":"https://wiki.com/books/okay",
     "related_item":{
-       "id":15,
-       "name":"testing",
-       "slug":"testing",
+       "id":42,
+       "name":"okay",
+       "slug":"okay",
        "description":"",
+       "created_at":"2025-02-26T22:51:56.000000Z",
+       "updated_at":"2025-02-26T22:53:23.000000Z",
        "created_by":{
           "id":3,
           "name":"Chris Topher",
@@ -26,12 +28,11 @@
           "name":"Chris Topher",
           "slug":"chris-topher"
        },
-       "created_at":"2025-02-22T01:48:37.000000Z",
-       "updated_at":"2025-02-22T01:48:37.000000Z",
        "owned_by":{
           "id":3,
           "name":"Chris Topher",
           "slug":"chris-topher"
-       }
+       },
+       "default_template_id":"None"
     }
  }
