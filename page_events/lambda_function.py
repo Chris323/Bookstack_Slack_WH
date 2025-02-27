@@ -38,33 +38,37 @@ def send_webhook(webhook_url, payload):
 
 #TODO, needs to change based on event type
 def message_handler(event_name):
-    #action = ''
-    #page_name = ''
-    #date_occurred = ''
-    #user = ''
+    date_created = event_name['related_item']['created_at'].split('T')
+    date_updated = event_name['related_item']['updated_at'].split('T')
+    date_create_out = date_created[0] + ' ' + date_created[1].rstrip('.000000Z') + " UTC"
+    date_update_out = date_updated[0] + ' ' + date_updated[1].rstrip('.000000Z') + " UTC"
 
     if "page_create" == event_name['event']:
         action = 'PAGE CREATED'
         page_name = event_name['related_item']['name']
-        date_occurred = event_name['related_item']['created_at'].split('T')
+        #date_occurred = event_name['related_item']['created_at'].split('T')
+        date_occurred = date_create_out
         user = event_name['related_item']['created_by']['name']
 
     if "page_update" == event_name['event']:
         action = 'PAGE UPDATED'
         page_name = event_name['related_item']['name']
-        date_occurred = event_name['related_item']['updated_at'].split('T')
+        #date_occurred = event_name['related_item']['updated_at'].split('T')
+        date_occurred = date_update_out
         user = event_name['related_item']['updated_by']['name']
 
     if "page_delete" == event_name['event']:
         action = 'PAGE DELETED'
         page_name = event_name['related_item']['name']
-        date_occurred = event_name['related_item']['updated_at'].split('T')
+        #date_occurred = event_name['related_item']['updated_at'].split('T')
+        date_occurred = date_update_out
         user = event_name['related_item']['updated_by']['name']
 
     if "page_move" == event_name['event']:
         action = 'PAGE MOVED'
         page_name = event_name['related_item']['name']
-        date_occurred = event_name['related_item']['updated_at'].split('T')
+        #date_occurred = event_name['related_item']['updated_at'].split('T')
+        date_occurred = date_update_out
         user = event_name['related_item']['updated_by']['name']
 
     message = {"text": "----------------------------------------------\n"+

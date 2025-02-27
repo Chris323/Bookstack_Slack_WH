@@ -38,14 +38,10 @@ def send_webhook(webhook_url, payload):
 
 #TODO, needs to change based on event type
 def message_handler(event_name):
-    #action = ''
-    #page_name = ''
-    #date_occurred = ''
-    #user = ''
     date_created = event_name['related_item']['created_at'].split('T')
     date_updated = event_name['related_item']['updated_at'].split('T')
-    date_create_out = date_created[0] + ' ' + date_created[1]
-    date_update_out = date_updated[0] + ' ' + date_updated[1]
+    date_create_out = date_created[0] + ' ' + date_created[1].rstrip('.000000Z') + " UTC"
+    date_update_out = date_updated[0] + ' ' + date_updated[1].rstrip('.000000Z') + " UTC"
 
 
     if "bookshelf_create" == event_name['event']:
@@ -78,7 +74,7 @@ def message_handler(event_name):
 
     message = {"text": "----------------------------------------------\n"+
                 f"** {action} ** \n"+
-                f"Page Name: \"{page_name}\" \n"+
+                f"Shelf Name: \"{page_name}\" \n"+
                 f"Date: \"{date_occurred}\" \n"+
                 f"By: \"{user}\""}
     

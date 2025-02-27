@@ -43,30 +43,29 @@ def message_handler(event_name):
     date_create_out = date_created[0] + ' ' + date_created[1].rstrip('.000000Z') + " UTC"
     date_update_out = date_updated[0] + ' ' + date_updated[1].rstrip('.000000Z') + " UTC"
 
-
-    if "bookshelf_create" == event_name['event']:
-        action = 'SHELF CREATED'
+    if "chapter_create" == event_name['event']:
+        action = 'CHAPTER CREATED'
         page_name = event_name['related_item']['name']
         #date_occurred = event_name['related_item']['created_at'].split('T')
         date_occurred = date_create_out
         user = event_name['related_item']['created_by']['name']
 
-    if "bookshelf_update" == event_name['event']:
-        action = 'SHELF UPDATED'
+    if "chapter_update" == event_name['event']:
+        action = 'CHAPTER UPDATED'
         page_name = event_name['related_item']['name']
         #date_occurred = event_name['related_item']['updated_at'].split('T')
         date_occurred = date_update_out
         user = event_name['related_item']['updated_by']['name']
 
-    if "bookshelf_delete" == event_name['event']:
-        action = '****SHELF DELETED****'
+    if "chapter_delete" == event_name['event']:
+        action = 'CHAPTER DELETED'
         page_name = event_name['related_item']['name']
         #date_occurred = event_name['related_item']['updated_at'].split('T')
         date_occurred = date_update_out
         user = event_name['related_item']['updated_by']['name']
 
-    if "bookshelf_create_from_book" == event_name['event']:
-        action = 'SHELF CREATED FROM BOOK'
+    if "chapter_move" == event_name['event']:
+        action = 'CHAPTER MOVED'
         page_name = event_name['related_item']['name']
         #date_occurred = event_name['related_item']['updated_at'].split('T')
         date_occurred = date_update_out
@@ -74,7 +73,7 @@ def message_handler(event_name):
 
     message = {"text": "----------------------------------------------\n"+
                 f"** {action} ** \n"+
-                f"Book Name: \"{page_name}\" \n"+
+                f"Chapter Name: \"{page_name}\" \n"+
                 f"Date: \"{date_occurred}\" \n"+
                 f"By: \"{user}\""}
     
